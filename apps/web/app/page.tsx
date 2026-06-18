@@ -1,24 +1,53 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { SignalSynth } from "@/src/lib/audio/SignalSynth";
+import { SignalEvent, SignalSynth } from "@/src/lib/audio/SignalSynth";
+
+function createMockSignal(): SignalEvent {
+  return {
+    source: Math.random() > 0.75 ? "ais" : "adsb",
+    altitude: Math.floor(Math.random() * 40000),
+    speed: Math.floor(80 + Math.random() * 520),
+    heading: Math.floor(Math.random() * 360),
+    signalStrength: Math.floor(-85 + Math.random() * 65),
+  };
+}
 
 export default function Home() {
   const synthRef = useRef<SignalSynth | null>(null);
-  const [running, setRunning] = useState(false);
+  const timerRef = useRef<number | null>(null);
 
-  async function toggleAudio() {
+  const [running, setRunning] = useState(false);
+  const [lastSignal, setLastSignal] = useState<SignalEvent | null>(null);
+
+  async function start() {
     if (!synthRef.current) {
       synthRef.current = new SignalSynth();
     }
 
-    if (running) {
-      await synthRef.current.stop();
-      setRunning(false);
-    } else {
-      await synthRef.current.start();
-      setRunning(true);
+    await synthRef.current.start();
+
+    const firstSignal = createMockSignal();
+    synthRef.current.triggerSignal(firstSignal);
+    setLastSignal(firstSignal);
+
+    timerRef.current = window.setInterval(() => {
+      const signal = createMockSignal();
+      synthRef.current?.triggerSignal(signal);
+      setLastSignal(signal);
+    }, 1100);
+
+    setRunning(true);
+  }
+
+  async function stop() {
+    if (timerRef.current) {
+      window.clearInterval(timerRef.current);
+      timerRef.current = null;
     }
+
+    await synthRef.current?.stop();
+    setRunning(false);
   }
 
   return (
@@ -27,16 +56,27 @@ export default function Home() {
         <h1 className="text-5xl font-bold tracking-tight">Signal Drift</h1>
 
         <p className="mt-4 text-neutral-400">
-          A browser-based ambient instrument for radio signal data.
+          Mock radio events are translated into pitch, pan, filter movement,
+          and ambient delay.
         </p>
       </div>
 
       <button
-        onClick={toggleAudio}
+        onClick={running ? stop : start}
         className="rounded-full border border-neutral-700 px-6 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition"
       >
-        {running ? "Stop Drone" : "Start Drone"}
+        {running ? "Stop Signal Stream" : "Start Signal Stream"}
       </button>
+
+      <div className="w-full max-w-xl rounded-xl border border-neutral-800 bg-neutral-950 p-4">
+        <h2 className="mb-3 text-sm uppercase tracking-widest text-neutral-500">
+          Last Signal Event
+        </h2>
+
+        <pre className="overflow-auto text-sm text-neutral-300">
+          {lastSignal ? JSON.stringify(lastSignal, null, 2) : "No signal yet."}
+        </pre>
+      </div>
     </main>
   );
 }
