@@ -14,17 +14,21 @@
 /coverage
 
 # next.js
-/.next/
-/out/
-.next
-
-
 # production
 /build
+/.next/
+/out/
+
+# production
+/build/
 
 # misc
 .DS_Store
 *.pem
+
+# editor
+.vscode/
+.idea/
 
 # debug
 npm-debug.log*
@@ -33,11 +37,13 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+# dotenv: ignore local envs, keep examples
+.env.local
+.env.*.local
+!.env.example
 
 # vercel
-.vercel
+.vercel/
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
