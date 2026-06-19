@@ -19,6 +19,7 @@ export class SignalSynth {
   private master: GainNode | null = null;
   private filter: BiquadFilterNode | null = null;
   private droneOsc: OscillatorNode | null = null;
+  private analyser: AnalyserNode | null = null;
 
   async start() {
     if (this.ctx) {
@@ -49,7 +50,11 @@ export class SignalSynth {
     this.filter.connect(this.master);
     delay.connect(this.master);
 
-    this.master.connect(this.ctx.destination);
+    this.analyser = this.ctx.createAnalyser();
+    this.analyser.fftSize = 2048;
+
+    this.master.connect(this.analyser);
+    this.analyser.connect(this.ctx.destination);
 
     this.createDrone();
   }
@@ -110,4 +115,8 @@ export class SignalSynth {
 
     this.droneOsc.start();
   }
+
+  getAnalyser() {
+    return this.analyser;
+}
 }

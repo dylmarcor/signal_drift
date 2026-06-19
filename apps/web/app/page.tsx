@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { SignalEvent, SignalSynth } from "@/src/lib/audio/SignalSynth";
+import { SpectrumVisualizer } from "@/src/components/SpectrumVisualizer";
 
 function createMockSignal(): SignalEvent {
   return {
@@ -19,6 +20,7 @@ export default function Home() {
 
   const [running, setRunning] = useState(false);
   const [lastSignal, setLastSignal] = useState<SignalEvent | null>(null);
+  const [analyser, setAnalyser] = useState<AnalyserNode | null>(null);
 
   async function start() {
     if (!synthRef.current) {
@@ -26,6 +28,8 @@ export default function Home() {
     }
 
     await synthRef.current.start();
+
+    setAnalyser(synthRef.current.getAnalyser());
 
     const firstSignal = createMockSignal();
     synthRef.current.triggerSignal(firstSignal);
@@ -67,6 +71,8 @@ export default function Home() {
       >
         {running ? "Stop Signal Stream" : "Start Signal Stream"}
       </button>
+
+      <SpectrumVisualizer analyser={analyser} />
 
       <div className="w-full max-w-xl rounded-xl border border-neutral-800 bg-neutral-950 p-4">
         <h2 className="mb-3 text-sm uppercase tracking-widest text-neutral-500">
