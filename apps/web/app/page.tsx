@@ -16,38 +16,42 @@ function createMockSignal(): SignalEvent {
 
 export default function Home() {
   const synthRef = useRef<SignalSynth | null>(null);
-  const timerRef = useRef<number | null>(null);
+  const wsRef = useRef<WebSocket | null>(null);
 
   const [running, setRunning] = useState(false);
   const [lastSignal, setLastSignal] = useState<SignalEvent | null>(null);
   const [analyser, setAnalyser] = useState<AnalyserNode | null>(null);
 
-  async function start() {
-    if (!synthRef.current) {
-      synthRef.current = new SignalSynth();
-    }
-
-    await synthRef.current.start();
-
-    setAnalyser(synthRef.current.getAnalyser());
-
-    const firstSignal = createMockSignal();
-    synthRef.current.triggerSignal(firstSignal);
-    setLastSignal(firstSignal);
-
-    timerRef.current = window.setInterval(() => {
-      const signal = createMockSignal();
-      synthRef.current?.triggerSignal(signal);
-      setLastSignal(signal);
-    }, 1100);
-
-    setRunning(true);
+async function start() {
+  if (!synthRef.current) {
+    synthRef.current = new SignalSynth();
   }
 
+  await synthRef.current.start();
+  setAnalyser(synthRef.current.getAnalyser());
+
+  const wsUrl = process.env.NEXT_PUBLIC_WS_URL;
+
+  if (!wsUrl) {
+    throw new Error("Missing NEXT_PUBLIC_WS_URL");
+  }
+
+  const socket = new WebSocket(wsUrl);
+
+  socket.onmessage = (message) => {
+    const signal: SignalEvent = JSON.parse(message.data);
+    synthRef.current?.triggerSignal(signal);
+    setLastSignal(signal);
+  };
+
+  wsRef.current = socket;
+  setRunning(true);
+}
+
   async function stop() {
-    if (timerRef.current) {
-      window.clearInterval(timerRef.current);
-      timerRef.current = null;
+    if (wsRef.current) {
+      wsRef.current.close();
+      wsRef.current = null;
     }
 
     await synthRef.current?.stop();
