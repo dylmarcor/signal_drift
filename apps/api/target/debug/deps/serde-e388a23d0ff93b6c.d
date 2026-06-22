@@ -1,0 +1,14 @@
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/deps/serde-e388a23d0ff93b6c.d: /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/serde-1d84d94038952bdb/out/private.rs
+
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/deps/libserde-e388a23d0ff93b6c.rlib: /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/serde-1d84d94038952bdb/out/private.rs
+
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/deps/libserde-e388a23d0ff93b6c.rmeta: /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/serde-1d84d94038952bdb/out/private.rs
+
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/serde-1d84d94038952bdb/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/serde-1d84d94038952bdb/out

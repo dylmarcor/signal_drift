@@ -1,0 +1,14 @@
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/deps/thiserror-fc54a5fd849fe945.d: /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs
+
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/deps/libthiserror-fc54a5fd849fe945.rlib: /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs
+
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/deps/libthiserror-fc54a5fd849fe945.rmeta: /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs
+
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs:
+/Users/dcorbett/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs:
+/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/dcorbett/code/repos/signal_drift/apps/api/target/debug/build/thiserror-c60931e4e8dce25d/out
